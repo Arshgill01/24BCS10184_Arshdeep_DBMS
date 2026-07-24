@@ -46,4 +46,4 @@ GROUP BY department;
 The query correctly counts only students with `Marks` greater than 80 within each `department` group.
 
 ## Screenshot
-The question screenshot was supplied in the chat, but no local image file was available to add to this directory.
+![Count using CASE task and output](3.1.png)
