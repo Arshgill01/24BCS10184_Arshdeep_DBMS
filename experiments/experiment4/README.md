@@ -4,7 +4,7 @@
 
 To perform and compare SQL joins—`INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, `FULL OUTER JOIN`, self joins, and `CROSS JOIN`—using related customer/order/product/category, student/course, and employee tables.
 
-> **Evidence:** The five supplied CodeChef captures show successful results for subparts **4.1** through **4.5**. The captures are not available as standalone image files in this repository, so this README records the verified tasks, SQL, and visible results.
+> **Evidence:** The supplied CodeChef captures show successful results for subparts **4.1** through **4.5**. The 4.5 capture is stored locally as [4.5.png](4.5.png); the remaining captures have not yet been added as standalone image files.
 
 ## Summary
 
@@ -192,6 +192,9 @@ CROSS JOIN products AS p1;
 
 ### Result
 The self `LEFT JOIN` compares `employees` to itself so that manager names can be returned while retaining the top-level manager. `CROSS JOIN` returns the Cartesian product: every customer paired with every product.
+
+### Screenshot
+![Self join and cross join successful output](4.5.png)
 
 ---
 
