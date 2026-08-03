@@ -128,3 +128,79 @@ FROM employees;
 
 ### Result
 The queries group employee records by city, apply aggregate calculations, filter aggregate results with `HAVING`, and return distinct city values. No screenshot is included for §3.2.
+
+## 3.3 — Customers Without Orders
+
+### Objective
+Find every customer who has never placed an order.
+
+### Task
+Return customer names from `Customers` that have no matching row in `Orders`.
+
+### Input
+
+| Table | Relevant columns |
+| --- | --- |
+| `Customers` | `id`, `name` |
+| `Orders` | `id`, `customerId` |
+
+### SQL Query
+```sql
+SELECT c.name AS Customers
+FROM Customers AS c
+LEFT JOIN Orders AS o
+    ON c.id = o.customerId
+WHERE o.id IS NULL;
+```
+
+### Output
+
+| Customers |
+| --- |
+| Henry |
+| Max |
+
+### Result
+The `LEFT JOIN` retains every customer record. Filtering on `o.id IS NULL` keeps only the customers for whom no matching order exists.
+
+### Screenshot
+![Customers without orders query and output](3.3.png)
+
+## 3.4 — Employees With Low or Missing Bonuses
+
+### Objective
+Report each employee whose bonus is less than `1000` or who has not received a bonus.
+
+### Task
+Return the employee name and bonus from `Employee` and `Bonus`. Include employees with no matching `Bonus` record.
+
+### Input
+
+| Table | Relevant columns |
+| --- | --- |
+| `Employee` | `empId`, `name`, `supervisor`, `salary` |
+| `Bonus` | `empId`, `bonus` |
+
+### SQL Query
+```sql
+SELECT e.name, b.bonus
+FROM Employee AS e
+LEFT JOIN Bonus AS b
+    ON e.empId = b.empId
+WHERE b.bonus < 1000
+   OR b.bonus IS NULL;
+```
+
+### Output
+
+| name | bonus |
+| --- | ---: |
+| Brad | `NULL` |
+| John | `NULL` |
+| Dan | 500 |
+
+### Result
+The `LEFT JOIN` preserves employees with no bonus row, and the `WHERE` clause selects both missing bonuses and bonuses below `1000`.
+
+### Screenshot
+![Low or missing employee bonus query and output](3.4.png)
