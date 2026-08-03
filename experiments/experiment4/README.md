@@ -2,9 +2,9 @@
 
 ## Objective
 
-To perform and compare SQL joins—`INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, and `FULL OUTER JOIN`—using related customer/order/product/category and student/course tables.
+To perform and compare SQL joins—`INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, `FULL OUTER JOIN`, self joins, and `CROSS JOIN`—using related customer/order/product/category, student/course, and employee tables.
 
-> **Evidence:** The four supplied CodeChef captures show successful results for subparts **4.1** through **4.4**. The captures are not available as standalone image files in this repository, so this README records the verified tasks, SQL, and visible results.
+> **Evidence:** The five supplied CodeChef captures show successful results for subparts **4.1** through **4.5**. The captures are not available as standalone image files in this repository, so this README records the verified tasks, SQL, and visible results.
 
 ## Summary
 
@@ -14,6 +14,7 @@ To perform and compare SQL joins—`INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, and 
 | 4.2 | `INNER JOIN`, `LEFT JOIN` | Compare matched student/course rows with all student rows. |
 | 4.3 | `FULL OUTER JOIN` | Return every student and every course, including unmatched rows. |
 | 4.4 | `INNER JOIN`, `FULL OUTER JOIN`, `RIGHT JOIN` | Apply joins to customer/order and product/category data. |
+| 4.5 | Self `LEFT JOIN`, `CROSS JOIN` | Map employees to managers and form customer/product combinations. |
 
 ---
 
@@ -157,6 +158,43 @@ The three queries demonstrate the practical differences between an `INNER JOIN` 
 
 ---
 
+## 4.5 — Joins Practice 3
+
+### Task 1 — Employees and Their Managers
+Use a self join on the `employees` table to list each employee and their manager. Employees without a manager must still be included.
+
+```sql
+SELECT e1.Employee_Name AS employee,
+       e2.Employee_Name AS Manager
+FROM employees AS e1
+LEFT JOIN employees AS e2
+    ON e1.Manager_id = e2.Employee_id;
+```
+
+### Verified output
+
+| employee | Manager |
+| --- | --- |
+| John Doe | `NULL` |
+| Jane Smith | John Doe |
+| Peter Jones | John Doe |
+| Mary Green | Peter Jones |
+| Raj | Jane Smith |
+
+### Task 2 — Customer/Product Combinations
+Return every possible combination of customer name and product name.
+
+```sql
+SELECT c1.customer_name, p1.product_name
+FROM customers AS c1
+CROSS JOIN products AS p1;
+```
+
+### Result
+The self `LEFT JOIN` compares `employees` to itself so that manager names can be returned while retaining the top-level manager. `CROSS JOIN` returns the Cartesian product: every customer paired with every product.
+
+---
+
 ## Overall Result
 
-All four JOIN exercises produced the expected outputs in CodeChef. The experiment demonstrates how join type controls whether unmatched rows are excluded, retained from one table, or retained from both tables.
+All five JOIN exercises produced the expected outputs in CodeChef. The experiment demonstrates how join type controls whether unmatched rows are excluded, retained from one table, retained from both tables, or combined with every row of another table.
