@@ -56,6 +56,10 @@ WHERE LENGTH(content) > 15;
 
 `LENGTH(content)` returns the number of characters in each tweet. The `WHERE` clause retains only content longer than 15 characters, so tweet `2` is returned. The submitted MySQL solution was accepted with all 22 test cases passing.
 
+### Screenshot
+
+![Accepted Invalid Tweets submission](Screenshot%202026-08-07%20at%2011.45.41%E2%80%AFAM.png)
+
 ---
 
 ## 5.2 — American Cuisine Revenue Percentage
@@ -94,6 +98,10 @@ FROM Orders;
 ### Result
 
 The `CASE` expression includes prices only for American-cuisine orders in the numerator, while `SUM(price)` calculates the revenue across all orders. Multiplying by `100.0` converts the ratio to a percentage, and `ROUND(..., 2)` produces the required two-decimal-place result.
+
+### Screenshot
+
+![American cuisine revenue percentage output](Screenshot%202026-08-07%20at%2011.39.52%E2%80%AFAM.png)
 
 ---
 
