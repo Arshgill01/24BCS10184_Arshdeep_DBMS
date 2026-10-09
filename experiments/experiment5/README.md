@@ -12,6 +12,7 @@ To write SQL queries that filter records using string-length conditions and calc
 | --- | --- | --- |
 | 5.1 | `SELECT`, `WHERE`, `LENGTH()` | Find tweet IDs whose content exceeds 15 characters. |
 | 5.2 | `SUM()`, `CASE`, `ROUND()` | Calculate the percentage of total order revenue contributed by American cuisine. |
+| [Task 3](task3/Experiment.md) | PL/pgSQL `DO`, `IF`, `ELSIF` | Classify a positive integer into a range. |
 
 ---
 
@@ -107,4 +108,4 @@ The `CASE` expression includes prices only for American-cuisine orders in the nu
 
 ## Overall Result
 
-Both Experiment 5 queries produced the expected results: invalid tweet ID `2` was identified in 5.1, and the American cuisine revenue contribution was calculated as `27.75%` in 5.2.
+Both filtering/aggregate queries produced the documented results: invalid tweet ID `2` was identified in 5.1, and the American cuisine revenue contribution was calculated as `27.75%` in 5.2. The third task is documented separately in [Task 3](task3/Experiment.md); its screenshot shows code rather than emitted output.

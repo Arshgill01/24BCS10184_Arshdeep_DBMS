@@ -51,17 +51,17 @@ INSERT INTO Billing (BillID, PatientID, TreatmentID, Amount, BillDate, Status) V
 
 ### Doctors
 ```sql
-SELECT * FROM Doctors LIMIT 1;
+SELECT * FROM Doctors WHERE DoctorID = 1;
 ```
 
 ### Patients
 ```sql
-SELECT * FROM Patients LIMIT 1;
+SELECT * FROM Patients WHERE PatientID = 1;
 ```
 
 ### Appointments
 ```sql
-SELECT * FROM Appointments LIMIT 1;
+SELECT * FROM Appointments WHERE AppointmentID = 1;
 ```
 
 ## Output

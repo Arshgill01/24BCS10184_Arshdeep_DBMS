@@ -4,7 +4,13 @@
 
 To perform and compare SQL joins—`INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, `FULL OUTER JOIN`, self joins, and `CROSS JOIN`—using related customer/order/product/category, student/course, and employee tables.
 
-> **Evidence:** The supplied CodeChef captures show successful results for subparts **4.1** through **4.5**. The 4.5 capture is stored locally as [4.5.png](4.5.png); the remaining captures have not yet been added as standalone image files.
+> **Evidence:** Existing CodeChef captures are linked below. These are previously supplied screenshots, not new executions performed during the repository audit.
+>
+> - [Customer/order joins](Screenshot%202026-08-03%20at%2011.37.09%E2%80%AFAM.png)
+> - [Student/course left joins](Screenshot%202026-08-03%20at%2011.44.30%E2%80%AFAM.png)
+> - [Student/course full outer join](Screenshot%202026-08-03%20at%2011.45.22%E2%80%AFAM.png)
+> - [Customer/order and product/category joins](Screenshot%202026-08-03%20at%2011.55.08%E2%80%AFAM.png)
+> - [Self join and cross join](4.5.png)
 
 ## Summary
 
@@ -19,6 +25,19 @@ To perform and compare SQL joins—`INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, `FUL
 ---
 
 ## 4.1 — Joins Practice 1
+
+### Reference Task 1 — Customer Names and Order Dates
+
+Display the customer name and order date for customers who have placed an order.
+
+```sql
+SELECT c.customer_name, o.order_date
+FROM customers c
+INNER JOIN orders o
+    ON c.customer_id = o.customer_id;
+```
+
+This is the two-column projection required by reference Experiment 4 Task 1. The existing §4.4 Task 1 query also returns these fields, together with additional order details.
 
 ### Task 1 — Customers and Their Orders
 Display each customer's name and product name, including customers who have not placed an order.

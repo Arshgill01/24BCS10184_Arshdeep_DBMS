@@ -1,8 +1,8 @@
 # Experiment 7 - Task 1
 
-Name: ABHINEET
+Name: Arshdeep Singh
 
-UID: 24BCS10039
+UID: 24BCS10184
 
 ## Aim
 
@@ -11,6 +11,10 @@ To use an explicit cursor and a user-defined exception in PL/SQL to handle an em
 ## Question
 
 Create an `employee` table and insert employee records. Use an explicit cursor to increase each employee's salary by 10%. If an employee's salary is zero, raise a user-defined exception and display an appropriate message.
+
+## Environment
+
+Use Oracle Database with PL/SQL, not PostgreSQL. Enable DBMS output with `SET SERVEROUTPUT ON` in SQL*Plus or SQLcl before running `task.sql`. Run the setup in a fresh schema; it creates the `employee` table.
 
 ## SQL Queries Used
 
@@ -67,11 +71,13 @@ PL/SQL procedure successfully completed.
 
 ## Output Screenshot
 
+Reference screenshot from [Abhineet's Experiment 7 Task 1](https://github.com/RICH-KEED/24BCS10039_ABHINEET_ADBMS/tree/9d579d352a3d9ae6eae24cc03ff01babf52893d0/EXPERIMENTS/EXPERIMENT-7/TASK-1), not a new local execution.
+
 ![Experiment 7 Task 1 Output](image.png)
 
 ## Image Explanation
 
-The screenshot shows an explicit cursor fetching employee IDs and salaries from the `employee` table. The cursor increases salaries by 10% until it encounters employee 2, whose salary is zero. The user-defined `salary_zero` exception is raised, and the message `Salary is zero. Increment not possible.` is displayed.
+The screenshot shows an explicit cursor fetching employee IDs and salaries from the `employee` table. The cursor increases salaries by 10% until it encounters employee 2, whose salary is zero. Without `ORDER BY`, the fetch order is not guaranteed; the zero-salary exception stops the block rather than skipping that row and processing all remaining employees. The user-defined `salary_zero` exception is raised, and the message `Salary is zero. Increment not possible.` is displayed.
 
 ## Result
 

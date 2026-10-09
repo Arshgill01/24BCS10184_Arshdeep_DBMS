@@ -1,8 +1,8 @@
 # Experiment 6 - Task 1
 
-Name: ABHINEET
+Name: Arshdeep Singh
 
-UID: 24BCS10039
+UID: 24BCS10184
 
 ## Aim
 
@@ -60,6 +60,8 @@ DELETE 1
 ```
 
 ## Output Screenshot
+
+Reference screenshot from [Abhineet's Experiment 6 Task 1](https://github.com/RICH-KEED/24BCS10039_ABHINEET_ADBMS/tree/9d579d352a3d9ae6eae24cc03ff01babf52893d0/EXPERIMENTS/EXPERIMENT-6/TASK-1), not a new local execution.
 
 ![Experiment 6 Task 1 Output](image.png)
 

@@ -48,7 +48,7 @@ GROUP BY department;
 The query correctly counts only students with `Marks` greater than 80 within each `department` group.
 
 ### Screenshot
-![Count using CASE task and output](3.1.png)
+Screenshot pending: `3.1.png` is not present in this repository.
 
 ## 3.2 — Employee Aggregate Functions
 
@@ -61,7 +61,7 @@ The following are multiple related SQL questions:
 1. Count employees in each city.
 2. Sort the city-wise employee counts in ascending and descending order; when counts are equal, sort city names alphabetically.
 3. Count employees in each city whose salary is at least `90000`.
-4. Find cities with exactly one employee whose salary is at least `90000`.
+4. Find cities with at least one employee whose salary is at least `90000`.
 5. Find the average employee salary for each city.
 6. List the distinct cities and count them.
 
@@ -106,11 +106,11 @@ SELECT emp_city,
 FROM employees
 GROUP BY emp_city;
 
--- 4. Find cities with exactly one employee earning at least 90000.
+-- 4. Find cities with at least one employee earning at least 90000.
 SELECT emp_city
 FROM employees
 GROUP BY emp_city
-HAVING SUM(CASE WHEN emp_salary >= 90000 THEN 1 ELSE 0 END) = 1;
+HAVING SUM(CASE WHEN emp_salary >= 90000 THEN 1 ELSE 0 END) > 0;
 
 -- 5. Find the average employee salary for each city.
 SELECT emp_city, CAST(AVG(emp_salary) AS DECIMAL(20, 2)) AS average_salary
@@ -128,6 +128,21 @@ FROM employees;
 
 ### Result
 The queries group employee records by city, apply aggregate calculations, filter aggregate results with `HAVING`, and return distinct city values. No screenshot is included for §3.2.
+
+### Additional Task — Student Counts and Average Marks by City
+
+Count students per city and calculate their average marks using the existing `students` table, which must contain `city` and `marks` columns.
+
+```sql
+SELECT city,
+       COUNT(*) AS student_count,
+       AVG(marks) AS avg_marks
+FROM students
+GROUP BY city
+ORDER BY city;
+```
+
+The result contains one row per city. Counts and averages depend on the supplied student data; no execution output or screenshot is available here.
 
 ## 3.3 — Customers Without Orders
 
@@ -164,7 +179,7 @@ WHERE o.id IS NULL;
 The `LEFT JOIN` retains every customer record. Filtering on `o.id IS NULL` keeps only the customers for whom no matching order exists.
 
 ### Screenshot
-![Customers without orders query and output](3.3.png)
+Screenshot pending: `3.3.png` is not present in this repository.
 
 ## 3.4 — Employees With Low or Missing Bonuses
 
@@ -203,4 +218,4 @@ WHERE b.bonus < 1000
 The `LEFT JOIN` preserves employees with no bonus row, and the `WHERE` clause selects both missing bonuses and bonuses below `1000`.
 
 ### Screenshot
-![Low or missing employee bonus query and output](3.4.png)
+Screenshot pending: `3.4.png` is not present in this repository.

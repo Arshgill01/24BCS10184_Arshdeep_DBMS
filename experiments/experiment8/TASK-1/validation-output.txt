@@ -1,0 +1,14 @@
+BEGIN
+CREATE SCHEMA
+SET
+CREATE TABLE
+INSERT 0 3
+CREATE PROCEDURE
+ p_salary | p_status
+----------+----------
+ 55000.00 | SUCCESS
+(1 row)
+
+psql:experiment8/TASK-1/tests.sql:62: NOTICE:  Experiment 8 regression tests passed
+DO
+ROLLBACK

@@ -1,8 +1,8 @@
 # Experiment 5 - Task 3
 
-Name: ABHINEET
+Name: Arshdeep Singh
 
-UID: 24BCS10039
+UID: 24BCS10184
 
 ## Aim
 
@@ -30,7 +30,7 @@ END;
 $$;
 ```
 
-## Output
+## Expected Output
 
 ```text
 YOUR VALUE IS 4 AND RANGE IS BETWEEN 1 TO 10
@@ -42,8 +42,10 @@ YOUR VALUE IS 4 AND RANGE IS BETWEEN 1 TO 10
 
 ## Image Explanation
 
-The screenshot shows a PL/pgSQL DO block with a declared integer value of 4. The IF statement checks the range of the value and displays the matching notice message for the 1 to 10 range.
+The supplied reference screenshot shows the PL/pgSQL DO block with a declared integer value of 4, but does not show the emitted notice. It is not execution evidence for the expected output above.
+
+Source: [reference Experiment 5 Task 3](https://github.com/RICH-KEED/24BCS10039_ABHINEET_ADBMS/tree/9d579d352a3d9ae6eae24cc03ff01babf52893d0/EXPERIMENTS/EXPERIMENT-5/TASK-3).
 
 ## Result
 
-The number was successfully classified using conditional logic, and the appropriate notice message was displayed.
+For the sample positive integer `4`, the block selects the 1 to 10 branch. Execution evidence is pending. This exercise assumes a positive input: the inherited `ELSE` branch also accepts zero or negative values, so those inputs require additional validation before reusing the block.
